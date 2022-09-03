@@ -15,6 +15,13 @@ return new class extends Migration
     {
         Schema::create('productos', function (Blueprint $table) {
             $table->id();
+            $table->string('nombre');
+            $table->float('costo_dolar', 8, 2);
+            $table->float('costo_bolivar', 8, 2);
+            $table->float('precio', 8, 2);
+            $table->integer('impuesto_id');
+            $table->string('marca');
+            $table->integer('grupo_id');
             $table->timestamps();
         });
     }
