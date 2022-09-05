@@ -1,5 +1,5 @@
-@extends('app');
-@section('content');
+@extends('app')
+@section('content')
 <section class="bienvenidos">
 
         <header class="encabezado navbar-fixed-top" role="banner" id="encabezado">
@@ -167,4 +167,4 @@
     </main>
 
 
-@endsection;
+@endsection
