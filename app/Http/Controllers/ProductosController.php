@@ -8,4 +8,12 @@ class ProductosController extends Controller
 {
    
 
+public function index() 
+{
+
+}
+
+
+
+
 }

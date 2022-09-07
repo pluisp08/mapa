@@ -18,10 +18,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//Index de productos-Pagina Inicial
 Route::get('/productos', function () {
     return view('productos.index');
 });
 
-/*
-Route::get('/productos',[ProductosController::class,'index'])->name('productos');
-*/
+
+Route::get('/usuarios', function () {
+    return view('usuarios.login');
+});
+

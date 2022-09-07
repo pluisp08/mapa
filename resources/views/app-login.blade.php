@@ -26,7 +26,7 @@
     <link href={{asset('css/estilos.css')}} rel='stylesheet' type='text/css'>
 </head>
 
-<body>
+<body class="paginas-internas">
 <section class="bienvenidos">
 
 <header class="encabezado navbar-fixed-top" role="banner" id="encabezado">
@@ -50,11 +50,11 @@
 
         <nav id="menu-principal" class="collapse">
             <ul>
-                <li class="active"><a href="/productos">Inicio</a></li>
+                <li><a href="/productos">Inicio</a></li>
                 <li><a href="nosotros.html">Nosotros</a></li>
                 <li><a href="servicios.html">Servicios</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="/usuarios">Login</a></li>
+                <li class="active"><a href="/usuarios/login">Login</a></li>
             </ul>
         </nav>
 
@@ -62,17 +62,15 @@
 </header>
 
 
-        <div class="texto-encabezado text-xs-center">
+<div class="texto-encabezado text-xs-center">
 
-         <div class="container">
-         <h1 class="display-4 wow bounceIn">MAPA TECNOLOGÍA </h1>
-         <a href="contacto.html" class="btn btn-primary btn-lg">Contactanos</a>
-        </div>
+    <div class="container">
+        <h1 class="display-4 wow bounceIn">MAPA TECNOLOGÍA </h1>
+        
+    </div>
 
-    </div>
-    <div class="flecha-bajar text-xs-center">
-        <a data-scroll href="#tu-mejor-eleccion"> <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-    </div>
+</div>
+
 
 </section>
 

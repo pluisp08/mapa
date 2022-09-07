@@ -95,7 +95,7 @@ body {
   position: relative;
   z-index: 1;
   max-width: 300px;
-  margin: 14.74rem auto; }
+  margin: 0 auto; }
 
 .paginas-internas .sesion .formulario-sesion:before, .paginas-internas .sesion .formulario-sesion:after {
   content: "";
