@@ -16,20 +16,67 @@
     <link href={{asset('css/font-awesome.min.css')}} rel='stylesheet' type='text/css'>
 
     <!-- Carga de Galeria de imágenes -->
-    <link rel="stylesheet" href="../css/owl.carousel.min.css">
+
     <link href={{asset('css/owl.carousel.min.css')}} rel='stylesheet' type='text/css'>
 
     <!-- Carga de archivos css -->
-    <!--<link rel="stylesheet" href="css/bootstrap.css">-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href={{asset('css/bootstrap.css')}}>
 
     <link href={{asset('css/animate.min.css')}} rel='stylesheet' type='text/css'>
     <link href={{asset('css/estilos.css')}} rel='stylesheet' type='text/css'>
 </head>
 
 <body>
+<section class="bienvenidos">
 
-    @yield('content');
+<header class="encabezado navbar-fixed-top" role="banner" id="encabezado">
+    <div class="container">
+        <a href="index.html" class="logo">
+            <img src="images/logo.svg" alt="Logo del sitio">
+        </a>
+
+        <button type="button" class="boton-buscar" data-toggle="collapse" data-target="#bloque-buscar" aria-expanded="false">
+            <i class="fa fa-search" aria-hidden="true"></i>
+        </button>
+        <button type="button" class="boton-menu hidden-md-up" data-toggle="collapse" data-target="#menu-principal" aria-expanded="false">
+            <i class="fa fa-bars" aria-hidden="true"></i></button>
+
+        <form action="#" id="bloque-buscar" class="collapse">
+            <div class="contenedor-bloque-buscar">
+                <input type="text" placeholder="Buscar...">
+                <input type="submit" value="Buscar">
+            </div>
+        </form>
+
+        <nav id="menu-principal" class="collapse">
+            <ul>
+                <li class="active"><a href="/productos">Inicio</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="sesion.html">Login</a></li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+
+
+<div class="texto-encabezado text-xs-center">
+
+    <div class="container">
+        <h1 class="display-4 wow bounceIn">MAPA TECNOLOGÍA </h1>
+        <a href="contacto.html" class="btn btn-primary btn-lg">Contactanos</a>
+    </div>
+
+</div>
+<div class="flecha-bajar text-xs-center">
+    <a data-scroll href="#tu-mejor-eleccion"> <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+</div>
+
+</section>
+
+    @yield('content')
 
 
 
@@ -50,12 +97,11 @@
     <!--<a data-scroll class="ir-arriba" href="#encabezado"><i class="fa  fa-arrow-circle-up" aria-hidden="true"> </i> </a>-->
 
     <!-- Carga de archivos  JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src={{asset('js/jquery.min.js')}}></script>
+    <script src={{asset('js/bootstrap.min.js')}}></script>
     <script src={{asset('js/owl.carousel.js')}}></script>
     
-    <!--<script type="text/javascript">
+    <script type="text/javascript">
         $('.owl-carousel').owlCarousel({
             loop: true,
             margin: 0,
@@ -89,4 +135,4 @@
 
 </body>
 
-</html>
+</html>}

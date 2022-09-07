@@ -1,64 +1,12 @@
 @extends('app')
 @section('content')
-<section class="bienvenidos">
 
-        <header class="encabezado navbar-fixed-top" role="banner" id="encabezado">
-            <div class="container">
-                <a href="index.html" class="logo">
-                    <!--<img src="images/logo.svg" alt="Logo del sitio">-->
-                </a>
-
-                <button type="button" class="boton-buscar" data-toggle="collapse" data-target="#bloque-buscar" aria-expanded="false">
-                    <i class="fa fa-search" aria-hidden="true"></i>
-                </button>
-                <button type="button" class="boton-menu hidden-md-up" data-toggle="collapse" data-target="#menu-principal" aria-expanded="false">
-                    <i class="fa fa-bars" aria-hidden="true"></i></button>
-
-                <form action="#" id="bloque-buscar" class="collapse">
-                    <div class="contenedor-bloque-buscar">
-                        <input type="text" placeholder="Buscar...">
-                        <input type="submit" value="Buscar">
-                    </div>
-                </form>
-
-                <nav id="menu-principal" class="collapse">
-                    <ul>
-                        <li class="active"><a href="index.html">Inicio</a></li>
-                        <li><a href="nosotros.html">Nosotros</a></li>
-                        <li><a href="servicios.html">Servicios</a></li>
-                        <li><a href="contacto.html">Contacto</a></li>
-                        <li><a href="sesion.html">Login</a></li>
-                    </ul>
-                </nav>
-
-            </div>
-        </header>
-
-
-        <!--<div class="texto-encabezado text-xs-center">
-
-            <div class="container">
-                .<h1 class="display-4 wow bounceIn">MAPA TECNOLOGÍA </h1>
-                <a href="contacto.html" class="btn btn-primary btn-lg">Contactanos</a>
-            </div>
-
-        </div>-->
-        <div class="flecha-bajar text-xs-center">
-            <a data-scroll href="#agencia"> <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-        </div>
-
-    </section>
     <!--<section class="agencia p-y-1" id="agencia">
-
         <div class="container">
-
-
             <div class="row">
-
                 <div class="col-md-8 col-xl-9 wow bounceIn" data-wow-delay=".3s">
                     <h2 class="h3 text-xs-center text-md-left font-weight-bold">Sistemas Simple para soluciones</h2>
                     <p>MAPA brinda asesorias y soluciones empresariales</p>
-
                 </div>
                 <div class="col-md-4 col-xl-3 wow bounceIn" data-wow-delay=".6s">
                     <img src="images/agencia.svg" alt="La agencia">
@@ -67,9 +15,8 @@
         </div>
 
     </section>-->
-    <section class="tu-mejor-eleccion p-y-1">
+    <section class="tu-mejor-eleccion p-y-1" id="tu-mejor-eleccion">
         <div class="container">
-
             <h2 class="h3 text-xs-center font-weight-bold">¿Por que<span> Nosotros?</span></h2>
             <p class="text-xs-center">
                 Desarrollo de Aplicaciones
