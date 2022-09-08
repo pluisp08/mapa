@@ -125,7 +125,7 @@
                 }
             }
         })
-    </script>-->
+    </script>
     <script src={{asset('js/wow.min.js')}}></script>
     <script src={{asset('js/smooth-scroll.min.js')}}></script>
     <script src={{asset('js/sitio.js')}}></script>
@@ -134,4 +134,4 @@
 
 </body>
 
-</html>}
+</html>
