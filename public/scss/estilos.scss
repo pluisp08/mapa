@@ -493,9 +493,13 @@ EMPIEZAN LAS MEDIAS QUERIES
         border-bottom: 4px solid transparent;
         transition: all .5s ease
     }
-    #menu-principal ul li.active a,
+    #menu-principal ul li.active a {
+        color: $principal;
+        border-bottom: 4px solid
+    }
+
     #menu-principal ul li a:hover {
-        color: #12AFAF;
+        color: $tercero;
         border-bottom: 4px solid
     }
     .boton-buscar {
