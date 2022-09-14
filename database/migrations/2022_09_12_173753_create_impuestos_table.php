@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('impuestos', function (Blueprint $table) {
             $table->id();
+            $table->string('impuesto');
             $table->timestamps();
         });
     }

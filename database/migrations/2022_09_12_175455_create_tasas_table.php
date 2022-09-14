@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('tasas', function (Blueprint $table) {
             $table->id();
+            $table->float('tasa',4,2);  
             $table->timestamps();
         });
     }
