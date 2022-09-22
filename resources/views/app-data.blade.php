@@ -21,7 +21,7 @@
 
     <!-- Carga de archivos css -->
     <link rel="stylesheet" href={{asset('css/bootstrap.css')}}>
-    
+
     <link href={{asset('css/animate.min.css')}} rel='stylesheet' type='text/css'>
     <link href={{asset('css/estilos.css')}} rel='stylesheet' type='text/css'>
 
@@ -30,59 +30,48 @@
 </head>
 
 <body class="paginas-internas">
-<section class="bienvenidos">
+    <section class="bienvenidos">
+        <header class="encabezado navbar-fixed-top" role="banner" id="encabezado">
+            <div class="container">
+                <a href="index.html" class="logo">
+                    <img src="../images/logo.svg" alt="Logo del sitio">
+                </a>
+                <button type="button" class="boton-buscar" data-toggle="collapse" data-target="#bloque-buscar" aria-expanded="false">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="boton-menu hidden-md-up" data-toggle="collapse" data-target="#menu-principal" aria-expanded="false">
+                    <i class="fa fa-bars" aria-hidden="true"></i></button>
 
-<header class="encabezado navbar-fixed-top" role="banner" id="encabezado">
-    <div class="container">
-        <a href="index.html" class="logo">
-            <img src="../images/logo.svg" alt="Logo del sitio">
-        </a>
+                <form action="#" id="bloque-buscar" class="collapse">
+                    <div class="contenedor-bloque-buscar">
+                        <input type="text" placeholder="Buscar...">
+                        <input type="submit" value="Buscar">
+                    </div>
+                </form>
 
-        <button type="button" class="boton-buscar" data-toggle="collapse" data-target="#bloque-buscar" aria-expanded="false">
-            <i class="fa fa-search" aria-hidden="true"></i>
-        </button>
-        <button type="button" class="boton-menu hidden-md-up" data-toggle="collapse" data-target="#menu-principal" aria-expanded="false">
-            <i class="fa fa-bars" aria-hidden="true"></i></button>
+                <nav id="menu-principal" class="collapse">
+                    <ul>
+                        <li class="active"><a href="/">Inicio</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="servicios.html">Servicios</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="/usuarios">Login</a></li>
+                    </ul>
+                </nav>
 
-        <form action="#" id="bloque-buscar" class="collapse">
-            <div class="contenedor-bloque-buscar">
-                <input type="text" placeholder="Buscar...">
-                <input type="submit" value="Buscar">
             </div>
-        </form>
-
-        <nav id="menu-principal" class="collapse">
-            <ul>
-                <li class="active"><a href="/">Inicio</a></li>
-                <li><a href="nosotros.html">Nosotros</a></li>
-                <li><a href="servicios.html">Servicios</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="/usuarios">Login</a></li>
-            </ul>
-        </nav>
-
-    </div>
-</header>
-
-
+        </header>
         <div class="texto-encabezado text-xs-center">
-
-         <div class="container">
-         <h1 class="display-4 wow bounceIn">MAPA TECNOLOGÍA </h1>
-         
+            <div class="container">
+                <h1 class="display-4 wow bounceIn">MAPA TECNOLOGÍA </h1>
+            </div>
         </div>
-
-    </div>
-    
-
-</section>
+    </section>
 
     @yield('content')
 
 
-
-
-    <footer class="piedepagina p-y-1" role="contentinfo">
+    <footer class="piedepagina p-y-2" role="contentinfo">
         <div class="container">
             <p>2022 © MAPA TECNOLOGÍA Todos los derechos reservados</p>
             <ul class="redes-sociales">
@@ -104,13 +93,13 @@
     <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
 
 
-    
+
     <script>
-       $(document).ready(function () {
+        $(document).ready(function() {
             $('#productos').DataTable();
         });
     </script>
-    
+
 
 
 
