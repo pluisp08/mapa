@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('facturacion_detalles', function (Blueprint $table) {
             $table->id();
             $table->integer('facturacion_id');
-            $table->integer('producto_id',8,2);
+            $table->integer('producto_id');
             $table->float('cantidad',8,2);
             $table->float('costo',8,2);
             $table->float('iva',8,2);

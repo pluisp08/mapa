@@ -21,9 +21,12 @@
 
     <!-- Carga de archivos css -->
     <link rel="stylesheet" href={{asset('css/bootstrap.css')}}>
-
+    
     <link href={{asset('css/animate.min.css')}} rel='stylesheet' type='text/css'>
     <link href={{asset('css/estilos.css')}} rel='stylesheet' type='text/css'>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" rel='stylesheet' type='text/css'>
+    <link href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap4.min.css" rel='stylesheet' type='text/css'>
 </head>
 
 <body class="paginas-internas">
@@ -32,7 +35,7 @@
 <header class="encabezado navbar-fixed-top" role="banner" id="encabezado">
     <div class="container">
         <a href="index.html" class="logo">
-            <img src="images/logo.svg" alt="Logo del sitio">
+            <img src="../images/logo.svg" alt="Logo del sitio">
         </a>
 
         <button type="button" class="boton-buscar" data-toggle="collapse" data-target="#bloque-buscar" aria-expanded="false">
@@ -50,11 +53,11 @@
 
         <nav id="menu-principal" class="collapse">
             <ul>
-                <li><a href="/">Inicio</a></li>
+                <li class="active"><a href="/">Inicio</a></li>
                 <li><a href="nosotros.html">Nosotros</a></li>
                 <li><a href="servicios.html">Servicios</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
-                <li class="active"><a href="/usuarios/login">Login</a></li>
+                <li><a href="/usuarios">Login</a></li>
             </ul>
         </nav>
 
@@ -62,15 +65,15 @@
 </header>
 
 
-<div class="texto-encabezado text-xs-center">
+        <div class="texto-encabezado text-xs-center">
 
-    <div class="container">
-        <h1 class="display-4 wow bounceIn">MAPA TECNOLOGÍA </h1>
-        
+         <div class="container">
+         <h1 class="display-4 wow bounceIn">MAPA TECNOLOGÍA </h1>
+         
+        </div>
+
     </div>
-
-</div>
-
+    
 
 </section>
 
@@ -95,40 +98,19 @@
     <!--<a data-scroll class="ir-arriba" href="#encabezado"><i class="fa  fa-arrow-circle-up" aria-hidden="true"> </i> </a>-->
 
     <!-- Carga de archivos  JS -->
-    <script src={{asset('js/jquery.min.js')}}></script>
-    <script src={{asset('js/tether.min.js')}}></script>
-    <script src={{asset('js/bootstrap.min.js')}}></script>
-    <script src={{asset('js/owl.carousel.js')}}></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
+
+
     
-    <script type="text/javascript">
-        $('.owl-carousel').owlCarousel({
-            loop: true,
-            margin: 0,
-            nav: true,
-            autoWidth: false,
-            navText: ['<i class="fa fa-arrow-circle-left" title="Anterior"></i>', '<i class="fa  fa-arrow-circle-right" title="Siguiente"></i>'],
-            responsive: {
-                0: {
-                    items: 1
-                },
-                500: {
-                    items: 2,
-                    margin: 20
-                },
-                800: {
-                    items: 3,
-                    margin: 20
-                },
-                1000: {
-                    items: 4,
-                    margin: 20
-                }
-            }
-        })
+    <script>
+       $(document).ready(function () {
+            $('#productos').DataTable();
+        });
     </script>
-    <script src={{asset('js/wow.min.js')}}></script>
-    <script src={{asset('js/smooth-scroll.min.js')}}></script>
-    <script src={{asset('js/sitio.js')}}></script>
+    
 
 
 
