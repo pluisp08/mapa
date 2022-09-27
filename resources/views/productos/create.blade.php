@@ -13,11 +13,18 @@
                 <h2 class="m-b-2">Formulario de Producto Nuevo</h2>
 
 
-                <form action="">
+                <form action="/productos">
                     <div class="form-group row">
                         <label for="nombre" class="col-md-4 col-form-label">Nombre</label>
                         <div class="col-md-8">
                             <input class="form-control" type="text" id="nombre" name="nombre" placeholder="Nombre del Producto" data-toggle="tooltip" data-placement="top" title="Nombre del Producto...">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="codbarra" class="col-md-4 col-form-label">Codigo de Barras</label>
+                        <div class="col-md-8">
+                            <input class="form-control" type="text" id="codbarra" name="codbarra" placeholder="Codigo..." data-toggle="tooltip" data-placement="top" title="Codigo de Barras del Producto...">
                         </div>
                     </div>
 

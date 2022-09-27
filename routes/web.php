@@ -34,7 +34,7 @@ Route::get('/productos/nuevo', function () {
 });
 
 /*Editar Producto */
-Route::get('/productos/editar', function () {
+Route::patch('/productos/editar/{id}', function () {
     return view('productos.edit');
 });
 
