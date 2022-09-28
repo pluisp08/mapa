@@ -64,7 +64,7 @@
                                 <div class="input-group-prepend">
                                     <label class="input-group-text" for="inputGroupSelect01">Opciones</label>
                                 </div>
-                                <select class="custom-select" id="inputGroupSelect01">
+                                <select class="custom-select" id="inputGroupSelect01" name="impuesto_id">
                                     <option selected>Seleccione Impuesto...</option>
                                     <option value="1">IVA</option>
                                     <option value="2">EXENTO</option>
@@ -82,7 +82,7 @@
                                 <div class="input-group-prepend">
                                     <label class="input-group-text" for="inputGroupSelect01">Opciones</label>
                                 </div>
-                                <select class="custom-select" id="inputGroupSelect01">
+                                <select class="custom-select" id="inputGroupSelect01" name="grupo_id">
                                     <option selected>Seleccione Grupo de Producto...</option>
                                     <option value="1">Miscelaneos</option>
                                     <option value="2">Otros</option>
