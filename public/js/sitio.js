@@ -48,4 +48,13 @@ $(window).scroll(function () {
 Funciones para calculo de precio
 ------------------------------------*/
 
+const costoBolivar = id('costo_bolivar');
+
+
+costoBolivar.addEventListener('focus',()=>{
+        let tasa = id("tasa");
+        let costoDolar = id("costo_dolar");
+        let costo_bolivar = tasa.value * costoDolar.value;
+        costoBolivar.value = costo_bolivar.toFixed(2);
+})
 

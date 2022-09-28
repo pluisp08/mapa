@@ -84,9 +84,10 @@
                                 </div>
                                 <select class="custom-select" id="inputGroupSelect01" name="grupo_id">
                                     <option selected>Seleccione Grupo de Producto...</option>
-                                    <option value="1">Miscelaneos</option>
-                                    <option value="2">Otros</option>
-                                    
+                                    @foreach ($grupos as $grupo )
+                                        <option value="{{$grupo->id}}">{{$grupo->nombre}}</option>
+                                    @endforeach
+           
                                 </select>
                             </div>
                         </div>

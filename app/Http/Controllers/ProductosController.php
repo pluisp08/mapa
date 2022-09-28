@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Grupo;
 use App\Models\Producto;
 use App\Models\Tasa;
 use Illuminate\Http\Request;
@@ -21,10 +22,17 @@ class ProductosController extends Controller
     public function create()
     {
         
+
+        /* Capturo la ultima tasa */
         $tasas = DB::table('tasas')->max('tasa');
 
+        /*Capturando Grupos de Productos*/
+        $grupos = Grupo::all();
 
-       return view('productos.create',compact('tasas'));
+        
+
+
+       return view('productos.create',compact('tasas','grupos'));
     }
 
 
