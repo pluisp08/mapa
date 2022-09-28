@@ -52,12 +52,7 @@ class TasasController extends Controller
         return redirect('tasas');
 
         //return response()->json($tasas);
-
-
-        
-
-        
-
+  
     }
 
     /**
