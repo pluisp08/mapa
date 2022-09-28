@@ -14,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
+/*Route resource para Productos */
+Route::resource('productos',ProductosController::class);
+
 /*Route::get('/', function () {
     return view('welcome');
 });*/
@@ -23,27 +28,32 @@ Route::get('/', function () {
     return view('index');
 });
 
-/* Index Productos */
+/* Index Productos 
 Route::get('/productos', function () {
     return view('productos.index');
 });
 
-/*Crear Nuevo Producto */
+/*Crear Nuevo Producto 
 Route::get('/productos/nuevo', function () {
     return view('productos.create');
 });
 
-/*Editar Producto */
+/* Guardar producto 
+Route::post('/productos', function () {
+    return view('productos.store');
+});
+
+/*Editar Producto 
 Route::patch('/productos/editar/{id}', function () {
     return view('productos.edit');
 });
 
-/*Auxiliar codigo de barras al Producto */
+/*Auxiliar codigo de barras al Producto 
 Route::get('/productos/auxiliar', function () {
     return view('productos.auxiliar');
 });
 
-
+*/
 
 
 Route::get('/usuarios', function () {

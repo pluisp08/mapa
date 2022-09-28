@@ -65,7 +65,7 @@
                         </tr>
                     </tfoot>
                 </table>
-                <a href="/productos/nuevo" class="btn btn-primary btn-small">Nuevo Producto</a>
+                <a href="{{url('/productos/create')}}" class="btn btn-primary btn-small">Nuevo Producto</a>
             </div>
             <div class="col-md-2"></div>
             

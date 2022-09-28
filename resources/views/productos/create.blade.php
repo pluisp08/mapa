@@ -13,7 +13,8 @@
                 <h2 class="m-b-2">Formulario de Producto Nuevo</h2>
 
 
-                <form action="/productos">
+                <form action="{{url('/productos')}}" method="post">
+                    @csrf
                     <div class="form-group row">
                         <label for="nombre" class="col-md-4 col-form-label">Nombre</label>
                         <div class="col-md-8">
