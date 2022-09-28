@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-2"></div>
-            <div class="col-md8">
+            <div class="col-md-8">
                 <table id="productos" class="table table-striped table-bordered" style="width:100%">
                     <thead>
                         <tr>

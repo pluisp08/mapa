@@ -72,15 +72,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="form-group row">
-                        <label for="precio" class="col-md-4 col-form-label">Precio</label>
-
-                        <div class="col-md-8">
-                            <input class="form-control" type="text" id="precio" name="precio" placeholder="Precio..." data-toggle="tooltip" data-placement="top" title="Precio...">
-                        </div>
-                    </div>
-
                     
 
                     <div class="form-group row">
@@ -98,6 +89,14 @@
                                     
                                 </select>
                             </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="precio" class="col-md-4 col-form-label">Precio</label>
+
+                        <div class="col-md-8">
+                            <input class="form-control" type="text" id="precio" name="precio" placeholder="Precio..." data-toggle="tooltip" data-placement="top" title="Precio...">
                         </div>
                     </div>
 

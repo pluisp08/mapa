@@ -44,7 +44,7 @@ class TasasController extends Controller
 
         $tasas->save();
         
-        return view('tasas.index');
+        return redirect('tasas');
 
         //return response()->json($tasas);
 
