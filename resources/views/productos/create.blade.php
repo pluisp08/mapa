@@ -16,6 +16,13 @@
                 <form action="{{url('/productos')}}" method="post">
                     @csrf
                     <div class="form-group row">
+                        <label for="tasa" class="col-md-4 col-form-label">Tasa $</label>
+                        <div class="col-md-8">
+                            <input class="form-control" type="text" id="tasa" name="tasa"  data-toggle="tooltip" data-placement="top" title="Tasa del Dolar..." readonly value={{$tasas}}>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
                         <label for="nombre" class="col-md-4 col-form-label">Nombre</label>
                         <div class="col-md-8">
                             <input class="form-control" type="text" id="nombre" name="nombre" placeholder="Nombre del Producto" data-toggle="tooltip" data-placement="top" title="Nombre del Producto...">
@@ -49,14 +56,6 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="precio" class="col-md-4 col-form-label">Precio</label>
-
-                        <div class="col-md-8">
-                            <input class="form-control" type="text" id="precio" name="precio" placeholder="Precio..." data-toggle="tooltip" data-placement="top" title="Precio...">
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
                         <label for="precio" class="col-md-4 col-form-label">Impuesto</label>
 
                         <div class="col-md-8">
@@ -73,6 +72,16 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="form-group row">
+                        <label for="precio" class="col-md-4 col-form-label">Precio</label>
+
+                        <div class="col-md-8">
+                            <input class="form-control" type="text" id="precio" name="precio" placeholder="Precio..." data-toggle="tooltip" data-placement="top" title="Precio...">
+                        </div>
+                    </div>
+
+                    
 
                     <div class="form-group row">
                         <label for="precio" class="col-md-4 col-form-label">Grupo</label>

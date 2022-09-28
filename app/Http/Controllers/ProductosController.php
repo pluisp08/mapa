@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Producto;
+use App\Models\Tasa;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 use function PHPUnit\Framework\returnCallback;
 
@@ -18,7 +20,11 @@ class ProductosController extends Controller
 
     public function create()
     {
-        return view('productos.create');
+        
+        $tasas = DB::table('tasas')->max('tasa');
+
+
+       return view('productos.create',compact('tasas'));
     }
 
 
@@ -26,12 +32,10 @@ class ProductosController extends Controller
     {
 
         
-        $productos = $request()->all();
+        $productos = request()->all();
 
-        dd($productos);
+        $productos = $request->except('_token');
 
-        //$productos = $request->except('_token');
-
-        //return response()->json($productos);
+        return response()->json($productos);
     }
 }

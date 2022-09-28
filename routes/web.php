@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProductosController;
+use App\Http\Controllers\TasasController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,19 +15,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
+//Pagina Inicial
+Route::get('/', function () {
+    return view('index');
+});
 
 /*Route resource para Productos */
 Route::resource('productos',ProductosController::class);
+
+/*Route resource para Tasas */
+Route::resource('tasas',TasasController::class);
 
 /*Route::get('/', function () {
     return view('welcome');
 });*/
 
-//Pagina Inicial
-Route::get('/', function () {
-    return view('index');
-});
+
 
 /* Index Productos 
 Route::get('/productos', function () {
