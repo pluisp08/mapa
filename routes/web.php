@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GruposController;
 use App\Http\Controllers\ProductosController;
 use App\Http\Controllers\TasasController;
 use Illuminate\Support\Facades\Route;
@@ -25,6 +26,9 @@ Route::resource('productos',ProductosController::class);
 
 /*Route resource para Tasas */
 Route::resource('tasas',TasasController::class);
+
+/*Route resource para Grupos */
+Route::resource('grupos',GruposController::class);
 
 /*Route::get('/', function () {
     return view('welcome');

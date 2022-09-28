@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Tasa;
+use App\Models\Grupo;
 use Illuminate\Http\Request;
 
-class TasasController extends Controller
+class GruposController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,9 @@ class TasasController extends Controller
      */
     public function index()
     {
-        $tasas = Tasa::all();
 
-        return view('tasas.index', compact('tasas'));
+        $grupos = Grupo::all();
+        return view('grupos.index', compact('grupos'));
     }
 
     /**
@@ -26,7 +26,7 @@ class TasasController extends Controller
      */
     public function create()
     {
-        return view('tasas.create');
+        return view('grupos.create');
     }
 
     /**
@@ -37,27 +37,15 @@ class TasasController extends Controller
      */
     public function store(Request $request)
     {
+        $grupos = new Grupo();
 
-        $request->validate([
-            'tasa'=>'required'
-        ]);
+        $grupos->nombre = $request->nombre;
+        $grupos->utilidad = $request->utilidad;
+        $grupos->creado = date('Y-m-d', $request->created_at);
+        $grupos->modificado = date('Y-m-d', $request->updated_at);
+        $grupos->save();
 
-        $tasas = new Tasa();
-        $tasas->tasa = $request->tasa;
-        $tasas->creado = date('Y-m-d', $request->created_at);
-        $tasas->modificado = date('Y-m-d',$request->updated_at);
-
-        $tasas->save();
-        
-        return redirect('tasas');
-
-        //return response()->json($tasas);
-
-
-        
-
-        
-
+        return redirect('grupos');
     }
 
     /**

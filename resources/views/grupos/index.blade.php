@@ -9,7 +9,8 @@
                     <thead>
                         <tr>
                             <th>Id</th>
-                            <th>Tasa</th>
+                            <th>Grupo</th>
+                            <th>Utilidad %</th>
                             <th>Fecha Creacion</th>
                             <th>Acciones</th>
                             
@@ -18,30 +19,32 @@
                     <tbody>
 
 
-                        @if (isset($tasas))
-                        @foreach ($tasas as $tasa)
+                        
+                        @foreach ($grupos as $grupo)
                         <tr>
-                            <td>{{$tasa->id}}</td>
-                            <td>{{$tasa->tasa}}</td>
-                            <td>{{date('d-m-Y', strtotime($tasa->creado))}}</td>
-                            <td><a href="/tasas/editar"><i class="fa fa-pencil" aria-hidden="true" title="Editar"></i></a></td>
+                            <td>{{$grupo->id}}</td>
+                            <td>{{$grupo->nombre}}</td>
+                            <td>{{$grupo->utilidad}}</td>
+                            <td>{{date('d-m-Y', strtotime($grupo->creado))}}</td>
+                            <td><a href="/grupos/editar"><i class="fa fa-pencil" aria-hidden="true" title="Editar"></i></a></td>
                            
 
                         </tr>
                         @endforeach
-                        @endif
+                        
                     </tbody>
                     <tfoot>
                         <tr>
-                            <th>Id</th>
-                            <th>Tasa</th>
+                        <th>Id</th>
+                            <th>Grupo</th>
+                            <th>Utilidad %</th>
                             <th>Fecha Creacion</th>
                             <th>Acciones</th>
                             
                         </tr>
                     </tfoot>
                 </table>
-                <a href="{{url('/tasas/create')}}" class="btn btn-primary btn-small">Nueva Tasa</a>
+                <a href="{{url('/grupos/create')}}" class="btn btn-primary btn-small">Nuevo Grupo</a>
             </div>
             <div class="col-md-2"></div>
 

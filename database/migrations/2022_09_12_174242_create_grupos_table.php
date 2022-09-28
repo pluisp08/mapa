@@ -17,6 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('nombre');
             $table->float('utilidad',4,2);
+            $table->date('creado'); 
+            $table->date('modificado');
             $table->timestamps();
         });
     }

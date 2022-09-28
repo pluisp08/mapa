@@ -41,3 +41,11 @@ $(window).scroll(function () {
         nav.removeClass("fondo-menu");
     }
 });
+
+
+
+/*-----------------------------------
+Funciones para calculo de precio
+------------------------------------*/
+
+
