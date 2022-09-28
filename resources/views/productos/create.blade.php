@@ -36,6 +36,15 @@
                         </div>
                     </div>
 
+                    <div class="form-group row">
+                        <label for="costo_bolivar" class="col-md-4 col-form-label">Costo Bs</label>
+
+                        <div class="col-md-8">
+                            <input class="form-control" type="text" id="costo_bolivar" name="costo_bolivar" placeholder="Costo Bs..." data-toggle="tooltip" data-placement="top" title="Costo BS...">
+
+                        </div>
+                    </div>
+
 
                     <div class="form-group row">
                         <label for="costo_dolar" class="col-md-4 col-form-label">Costo $</label>
@@ -45,15 +54,6 @@
                         </div>
                     </div>
 
-
-                    <div class="form-group row">
-                        <label for="costo_bolivar" class="col-md-4 col-form-label">Costo Bs</label>
-
-                        <div class="col-md-8">
-                            <input class="form-control" type="text" id="costo_bolivar" name="costo_bolivar" placeholder="Costo Bs..." data-toggle="tooltip" data-placement="top" title="Costo BS...">
-
-                        </div>
-                    </div>
 
                     <div class="form-group row">
                         <label for="precio" class="col-md-4 col-form-label">Impuesto</label>
