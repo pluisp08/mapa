@@ -49,8 +49,6 @@ Funciones para calculo de precio
 ------------------------------------*/
 
 const costoDolar = id('costo_dolar');
-
-
 costoDolar.addEventListener('focus',()=>{
         let tasa = id("tasa");
         let costoBolivar = id("costo_bolivar");
@@ -59,4 +57,20 @@ costoDolar.addEventListener('focus',()=>{
 
         costoDolar.value = costo_dolar.toFixed(2);
 })
+
+/*-----------------------------------
+Funcion captura  utilidad del grupo producto
+------------------------------------*/
+
+const utilidad = id('utilidad');
+const grupoId = id('grupoId');
+
+grupoId.addEventListener('change',()=>{
+
+   
+        console.log(grupoId.options[grupoId.selectedIndex].value);
+     
+
+
+});
 

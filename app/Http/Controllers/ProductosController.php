@@ -29,10 +29,7 @@ class ProductosController extends Controller
         /*Capturando Grupos de Productos*/
         $grupos = Grupo::all();
 
-        
-
-
-       return view('productos.create',compact('tasas','grupos'));
+        return view('productos.create',compact('tasas','grupos'));
     }
 
 
