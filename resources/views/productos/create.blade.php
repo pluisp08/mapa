@@ -5,8 +5,8 @@
         <div class="row">
 
 
-        <div class="col-md-2">
-               
+            <div class="col-md-2">
+
             </div>
 
             <div class="col-md-8">
@@ -18,7 +18,7 @@
                     <div class="form-group row">
                         <label for="tasa" class="col-md-4 col-form-label">Tasa $</label>
                         <div class="col-md-8">
-                            <input class="form-control" type="text" id="tasa" name="tasa"  data-toggle="tooltip" data-placement="top" title="Tasa del Dolar..." readonly value={{$tasas}}>
+                            <input class="form-control" type="text" id="tasa" name="tasa" data-toggle="tooltip" data-placement="top" title="Tasa del Dolar..." readonly value={{$tasas}}>
                         </div>
                     </div>
 
@@ -67,30 +67,35 @@
                                     <option selected>Seleccione Impuesto...</option>
                                     <option value="1">IVA</option>
                                     <option value="2">EXENTO</option>
-                                    
+
                                 </select>
                             </div>
                         </div>
                     </div>
-                    
+
 
                     <div class="form-group row">
                         <label for="precio" class="col-md-4 col-form-label">Grupo</label>
 
-                        <div class="col-md-8">
+                        <div class="col-md-4">
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <label class="input-group-text" for="inputGroupSelect01">Opciones</label>
                                 </div>
-                                <select class="custom-select" id="inputGroupSelect01" name="grupo_id">
+                                <select class="custom-select" id="grupoId" name="grupo_id">
                                     <option selected>Seleccione Grupo de Producto...</option>
                                     @foreach ($grupos as $grupo )
-                                        <option value="{{$grupo->id}}">{{$grupo->nombre}}</option>
+                                    <option value="{{$grupo->id}}" id="{{$grupo->id}}">{{$grupo->nombre}}</option>
+                                    
                                     @endforeach
-           
                                 </select>
                             </div>
                         </div>
+                        <div class="col-md-4">
+                            <input class="form-control" type="text" id="utilidad" name="utilidad" placeholder="% Utilidad" data-toggle="tooltip" data-placement="top" title="% de Utilidad" readonly>
+                        </div>
+
+
                     </div>
 
                     <div class="form-group row">
@@ -112,7 +117,7 @@
 
             </div>
             <div class="col-md-2">
-               
+
             </div>
 
         </div>
