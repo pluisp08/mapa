@@ -58,3 +58,20 @@ costoBolivar.addEventListener('input',()=>{
         costoDolar.value = costo_dolar.toFixed(2);
 })
 
+
+/*-----------------------------------
+Funcion asincrona (ajax) para cargar utilidad del grupo
+------------------------------------*/
+
+const grupo = id('grupoId');
+
+grupo.addEventListener('change',()=>{
+
+    let ajax = new XMLHttpRequest();
+    ajax.onload = function(){
+        id('utilidad').value = this.responseText;
+    }
+    ajax.open('GET','/productos/utilidad/'+grupo.value);
+    ajax.send();
+
+})

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Grupo;
+use App\Models\Impuesto;
 use App\Models\Producto;
 use App\Models\Tasa;
 use Illuminate\Http\Request;
@@ -16,12 +17,13 @@ class ProductosController extends Controller
 
     public function index()
     {
-        return view('productos.index');
+        $productos = Producto::all();
+        return view('productos.index',compact('productos'));
     }
 
     public function create()
     {
-        
+
 
         /* Capturo la ultima tasa */
         $tasas = DB::table('tasas')->max('tasa');
@@ -29,18 +31,42 @@ class ProductosController extends Controller
         /*Capturando Grupos de Productos*/
         $grupos = Grupo::all();
 
-        return view('productos.create',compact('tasas','grupos'));
+        //Captura los impuestos existentes
+        $impuestos = Impuesto::all();
+
+        return view('productos.create', compact('tasas', 'grupos','impuestos'));
     }
 
 
     public function store(Request $request)
     {
 
-        
-        $productos = request()->all();
 
-        $productos = $request->except('_token');
 
-        return response()->json($productos);
+
+        $productos = new Producto();
+        $productos->nombre = $request->nombre;
+        $productos->costo_bolivar = $request->costo_bolivar;
+        $productos->costo_dolar = $request->costo_dolar;
+        $productos->precio = $request->precio;
+        $productos->grupo_id = $request->grupo_id;
+        $productos->impuesto_id = $request->impuesto_id;
+        $productos->creado = date('Y-m-d', $request->created_at);
+        $productos->modificado = date('Y-m-d',$request->updated_at);
+
+        $productos->save();
+
+        return redirect('productos')->with('success','Producto guardado exitosamente...');
+
+        //return response()->json($productos);
+    }
+
+    public function utilidad($grupo)
+    {
+        $porcentaje = Grupo::find($grupo);
+
+        //return response()->json($porcentaje);
+
+        return view('productos.utilidad', compact('porcentaje'));
     }
 }

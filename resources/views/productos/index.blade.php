@@ -12,44 +12,25 @@
                             <th>Costo Bs</th>
                             <th>Costo $</th>
                             <th>Precio</th>
+                            <th>Grupo</th>
                             <th>Impuesto</th>
                             <th></th>
                             <th></th>
-                            
-
-
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($productos as $producto)
                         <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>61</td>
-                            <td>2011-04-25</td>
-                            <td><a href="/productos/editar"><i class="fa fa-pencil" aria-hidden="true" title="Editar"></i></a></td>
-                            <td><a href="/productos/auxiliar"><i class="fa fa-barcode" aria-hidden="true" title="Auxiliar Codigo de Barras"></i></a></td>
-
+                            <td>{{$producto->nombre}}</td>
+                            <td>{{$producto->costo_bolivar}}</td>
+                            <td>{{$producto->costo_dolar}}</td>
+                            <td>{{$producto->precio}}</td>
+                            <td>{{$producto->grupo_id}}</td>
+                            <td>{{$producto->impuesto_id}}</td>
+                            <td><a href="/productos/{{$producto->id}}/editar"><i class="fa fa-pencil" aria-hidden="true" title="Editar"></i></a></td>
+                            <td></td>
                         </tr>
-                        <tr>
-                            <td>Garrett Winters</td>
-                            <td>Accountant</td>
-                            <td>Tokyo</td>
-                            <td>63</td>
-                            <td>2011-07-25</td>
-                            <td><a href="/productos/editar"><i class="fa fa-pencil" aria-hidden="true" title="Editar"></i></a></td>
-                            <td><a href="/productos/auxiliar"><i class="fa fa-barcode" aria-hidden="true" title="Auxiliar Codigo de Barras"></i></a></td>
-                        </tr>
-                        <tr>
-                            <td>Ashton Cox</td>
-                            <td>Junior Technical Author</td>
-                            <td>San Francisco</td>
-                            <td>66</td>
-                            <td>2009-01-12</td>
-                            <td><a href="/productos/editar"><i class="fa fa-pencil" aria-hidden="true" title="Editar"></i></a></td>
-                            <td><a href="/productos/auxiliar"><i class="fa fa-barcode" aria-hidden="true" title="Auxiliar Codigo de Barras"></i></a></td>
-
-                        </tr>
+                        @endforeach
 
 
                     </tbody>
@@ -59,6 +40,7 @@
                             <th>Costo Bs</th>
                             <th>Costo $</th>
                             <th>Precio</th>
+                            <th>Grupo</th>
                             <th>Impuesto</th>
                             <th></th>
                             <th></th>
@@ -68,7 +50,7 @@
                 <a href="{{url('/productos/create')}}" class="btn btn-primary btn-small">Nuevo Producto</a>
             </div>
             <div class="col-md-2"></div>
-            
+
         </div>
     </div>
 </section>

@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('impuestos', function (Blueprint $table) {
             $table->id();
             $table->string('impuesto');
+            $table->float('porcentaje',4,2)->nullable();
             $table->timestamps();
         });
     }

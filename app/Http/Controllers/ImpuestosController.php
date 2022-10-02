@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Grupo;
+use App\Models\Impuesto;
 use Illuminate\Http\Request;
 
-class GruposController extends Controller
+class ImpuestosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,9 @@ class GruposController extends Controller
      */
     public function index()
     {
+        $impuestos = Impuesto::all();
 
-        $grupos = Grupo::all();
-        return view('grupos.index', compact('grupos'));
+        return view('impuestos.index',compact('impuestos'));
     }
 
     /**
@@ -26,7 +26,7 @@ class GruposController extends Controller
      */
     public function create()
     {
-        return view('grupos.create');
+        return view('impuestos.create');
     }
 
     /**
@@ -37,15 +37,13 @@ class GruposController extends Controller
      */
     public function store(Request $request)
     {
-        $grupos = new Grupo();
+        $impuestos = request()->all();
 
-        $grupos->nombre = $request->nombre;
-        $grupos->utilidad = $request->utilidad;
-        $grupos->creado = date('Y-m-d', $request->created_at);
-        $grupos->modificado = date('Y-m-d', $request->updated_at);
-        $grupos->save();
+        $impuestos = $request->except('_token');
 
-        return redirect('grupos');
+        Impuesto::insert($impuestos);
+
+        return redirect('impuestos');
     }
 
     /**
@@ -92,6 +90,4 @@ class GruposController extends Controller
     {
         //
     }
-
-    
 }

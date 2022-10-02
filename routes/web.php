@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\GruposController;
+use App\Http\Controllers\ImpuestosController;
 use App\Http\Controllers\ProductosController;
 use App\Http\Controllers\TasasController;
 use Illuminate\Support\Facades\Route;
@@ -22,7 +23,49 @@ Route::get('/', function () {
 });
 
 /*Route resource para Productos */
-Route::resource('productos',ProductosController::class);
+//Route::resource('productos',ProductosController::class);
+
+//Index de Producto
+Route::get('productos',[ProductosController::class,'index'])->name('productos.index');
+
+//Formulario de crear de Producto
+Route::get('productos/create',[ProductosController::class,'create'])->name('productos.create');
+
+//Formulario editar Producto
+Route::get('productos/{id}/edit',[ProductosController::class,'edit'])->name('productos.edit');
+
+//Guardar Producto
+Route::post('productos',[ProductosController::class,'store'])->name('productos.store');
+
+//Ver Producto
+Route::get('productos/{id}',[ProductosController::class,'show'])->name('productos.show');
+
+//Guardar edicion producto
+Route::patch('productos/{id}',[ProductosController::class,'update'])->name('productos.update');
+
+//borrar producto
+Route::delete('productos/{id}',[ProductosController::class,'destroy'])->name('productos.destroy');
+
+//Cargar utilidad del grupo de producto
+Route::get('productos/utilidad/{grupo}',[ProductosController::class,'utilidad'])->name('productos.utilidad');
+
+
+
+//Index de Impuestos
+Route::get('impuestos',[ImpuestosController::class,'index'])->name('impuesto.index');
+
+//Formulario de nuevo de Impuestos
+Route::get('impuestos/create',[ImpuestosController::class,'create'])->name('impuesto.create');
+
+//Guardar Impuestos
+Route::post('impuestos',[ImpuestosController::class,'store'])->name('impuesto.store');
+
+
+
+
+
+
+
 
 /*Route resource para Tasas */
 Route::resource('tasas',TasasController::class);
