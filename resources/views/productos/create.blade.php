@@ -66,7 +66,7 @@
                                 <select class="custom-select" id="inputGroupSelect01" name="impuesto_id">
                                     <option selected>Seleccione Impuesto...</option>
                                     @foreach ($impuestos as $impuesto)
-                                        <option value="{{$impuesto->id}}">{{$impuesto->impuesto.' - '.$impuesto->porcentaje.'%'}}</option>
+                                        <option value="{{$impuesto->id}}">{{$impuesto->impuesto}}</option>
                                     @endforeach
 
                                 </select>
