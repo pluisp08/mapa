@@ -19,12 +19,16 @@ return new class extends Migration
             $table->float('costo_dolar', 8, 2)->nullable();
             $table->float('costo_bolivar', 8, 2)->nullable();
             $table->float('precio', 8, 2);
-            $table->integer('impuesto_id');
             $table->string('marca')->nullable();
-            $table->integer('grupo_id');
             $table->date('creado');
             $table->date('modificado');
             $table->timestamps();
+
+            $table->foreignId('impuesto_id')->constrained('impuestos')
+            ->cascadeOnUpdate();
+
+            $table->foreignId('grupo_id')->constrained('grupos')
+            ->cascadeOnUpdate();
         });
     }
 

@@ -20,13 +20,14 @@
                     </thead>
                     <tbody>
                         @foreach ($productos as $producto)
+                        
                         <tr>
                             <td>{{$producto->nombre}}</td>
                             <td>{{$producto->costo_bolivar}}</td>
                             <td>{{$producto->costo_dolar}}</td>
                             <td>{{$producto->precio}}</td>
-                            <td>{{$producto->grupo_id}}</td>
-                            <td>{{$producto->impuesto_id}}</td>
+                            <td>{{$producto->grupos->nombre}}</td>
+                            <td>{{$producto->impuestos->impuesto}}</td>
                             <td><a href="/productos/{{$producto->id}}/editar"><i class="fa fa-pencil" aria-hidden="true" title="Editar"></i></a></td>
                             <td></td>
                         </tr>

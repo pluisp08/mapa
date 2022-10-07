@@ -15,10 +15,12 @@ return new class extends Migration
     {
         Schema::create('ajustes', function (Blueprint $table) {
             $table->id();
-            $table->integer('producto_id');
             $table->string('concepto');
             $table->float('cantidad',8,2);            
             $table->timestamps();
+
+            $table->foreignId('producto_id')->constrained('productos')
+            ->cascadeOnUpdate();
         });
     }
 

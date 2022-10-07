@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Impuesto extends Model
 {
     use HasFactory;
+
+    public function productos(){
+        return $this->hasMany(Producto::class,'id');
+        }
 }

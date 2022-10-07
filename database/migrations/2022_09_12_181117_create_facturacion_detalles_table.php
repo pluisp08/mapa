@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::create('facturacion_detalles', function (Blueprint $table) {
             $table->id();
-            $table->integer('facturacion_id');
             $table->integer('producto_id');
             $table->float('cantidad',8,2);
             $table->float('costo',8,2);
@@ -23,6 +22,9 @@ return new class extends Migration
             $table->float('precio',8,2);
             $table->float('igtf',8,2);
             $table->timestamps();
+
+            $table->foreignId('facturacion_id')->constrained('facturacions')
+            ->cascadeOnUpdate();
         });
     }
 

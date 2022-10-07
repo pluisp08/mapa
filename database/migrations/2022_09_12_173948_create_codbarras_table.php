@@ -15,9 +15,13 @@ return new class extends Migration
     {
         Schema::create('codbarras', function (Blueprint $table) {
             $table->id();
-            $table->integer('producto_id');
             $table->string('codbarra');
             $table->timestamps();
+
+
+
+            $table->foreignId('producto_id')->constrained('productos')
+            ->cascadeOnUpdate();
         });
     }
 
