@@ -83,12 +83,14 @@ class ProductosController extends Controller
     {
         $utilidad = ($u/100)+1;
 
-        if($imp != null){
-            $impuesto = ($imp/100)+1;
-
-            $precio = $cost * $impuesto * $utilidad;
+        if($imp == 1){
+            $prec = $cost * $utilidad;
+            $precio = round($prec,2);
         }else{
-            $precio = $cost * $utilidad;
+            $impuesto = ($imp/100)+1;
+            $prec = $cost * $utilidad;
+            $precio = round($prec,2);
+
         }
        
         

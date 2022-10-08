@@ -103,20 +103,21 @@ Funcion asincrona (ajax) para calcular el precio final del producto
 const precio = id('precio');
 precio.addEventListener('focus',()=>{
     
-
-        let impuesto = id('impuesto').value;
-        let utilidad = id('utilidad').value;
-        console.log(costoBolivar.value);
-
     let ajax = new XMLHttpRequest();
     ajax.onload = function(){
         
-        let impuesto = id('impuesto').value;
-        let utilidad = id('utilidad').value;
-        
-        
         id('precio').value = this.responseText;
     }
+    
+    let impuesto = id('impuesto').value;
+    let utilidad = id('utilidad').value;
+    
+    console.log(impuesto.length);
+    if (impuesto.length == 0) {
+        impuesto = 1;
+    }
+    
+    
     ajax.open('GET','/productos/precio/'+costoBolivar.value+'/'+impuesto+'/'+utilidad);
     ajax.send();
 
