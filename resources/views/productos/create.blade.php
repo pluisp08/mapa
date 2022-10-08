@@ -58,12 +58,12 @@
                     <div class="form-group row">
                         <label for="precio" class="col-md-4 col-form-label">Impuesto</label>
 
-                        <div class="col-md-8">
+                        <div class="col-md-4">
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <label class="input-group-text" for="inputGroupSelect01">Opciones</label>
                                 </div>
-                                <select class="custom-select" id="inputGroupSelect01" name="impuesto_id">
+                                <select class="custom-select" id="selectImpuesto" name="impuesto_id">
                                     <option selected>Seleccione Impuesto...</option>
                                     @foreach ($impuestos as $impuesto)
                                         <option value="{{$impuesto->id}}">{{$impuesto->impuesto}}</option>
@@ -71,6 +71,9 @@
 
                                 </select>
                             </div>
+                        </div>
+                        <div class="col-md-4">
+                        <input class="form-control" type="text" id="impuesto" name="impuesto" placeholder="% Impuesto" data-toggle="tooltip" data-placement="top" title="% de impuesto" readonly>
                         </div>
                     </div>
 
@@ -103,7 +106,7 @@
                         <label for="precio" class="col-md-4 col-form-label">Precio</label>
 
                         <div class="col-md-8">
-                            <input class="form-control" type="number" step="0.01" id="precio" name="precio" placeholder="Precio..." data-toggle="tooltip" data-placement="top" title="Precio...">
+                            <input class="form-control" type="text" id="precio" name="precio" placeholder="Precio..." data-toggle="tooltip" data-placement="top" title="Precio...">
                         </div>
                     </div>
 

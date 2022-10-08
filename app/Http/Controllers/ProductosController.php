@@ -69,4 +69,32 @@ class ProductosController extends Controller
 
         return view('productos.utilidad', compact('porcentaje'));
     }
+
+    public function impuestos($impuestos)
+    {
+        $porcImpuesto = Impuesto::find($impuestos);
+
+        //return response()->json($porcentaje);
+
+        return view('productos.impuestos', compact('porcImpuesto'));
+    }
+
+    public function precio($cost,$imp,$u)
+    {
+        $utilidad = ($u/100)+1;
+
+        if($imp != null){
+            $impuesto = ($imp/100)+1;
+
+            $precio = $cost * $impuesto * $utilidad;
+        }else{
+            $precio = $cost * $utilidad;
+        }
+       
+        
+//return response()->json($impuesto);
+
+
+        return view('productos.precio', compact('precio'));
+    }
 }

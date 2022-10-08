@@ -1,0 +1,3 @@
+
+{{$porcImpuesto->porcentaje}}
+

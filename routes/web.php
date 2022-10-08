@@ -46,8 +46,15 @@ Route::patch('productos/{id}',[ProductosController::class,'update'])->name('prod
 //borrar producto
 Route::delete('productos/{id}',[ProductosController::class,'destroy'])->name('productos.destroy');
 
-//Cargar utilidad del grupo de producto
+//Cargar impuesto por el id del impuesto seleccionado
+Route::get('productos/impuestos/{impuestos}',[ProductosController::class,'impuestos'])->name('productos.impuestos');
+
+//Cargar utilidad por el id del grupo seleccionado
 Route::get('productos/utilidad/{grupo}',[ProductosController::class,'utilidad'])->name('productos.utilidad');
+
+
+//Cargar precio total del producto del grupo de producto
+Route::get('productos/precio/{grupo}/{impuesto}/{utilidad}',[ProductosController::class,'precio'])->name('productos.precio');
 
 
 

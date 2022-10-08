@@ -45,7 +45,7 @@ $(window).scroll(function () {
 
 
 /*-----------------------------------
-Funciones para calculo de precio
+Funciones para calculo de precio en dolar
 ------------------------------------*/
 
 const costoBolivar = id('costo_bolivar');
@@ -72,6 +72,52 @@ grupo.addEventListener('change',()=>{
         id('utilidad').value = this.responseText;
     }
     ajax.open('GET','/productos/utilidad/'+grupo.value);
+    ajax.send();
+
+})
+
+/*-----------------------------------
+Funcion asincrona (ajax) para cargar utilidad del grupo
+------------------------------------*/
+
+const selectImpuesto = id('selectImpuesto');
+
+selectImpuesto.addEventListener('change',()=>{
+
+    let ajax = new XMLHttpRequest();
+    ajax.onload = function(){
+        id('impuesto').value = this.responseText;
+    }
+    ajax.open('GET','/productos/impuestos/'+selectImpuesto.value);
+    ajax.send();
+
+})
+
+
+/*-----------------------------------
+Funcion asincrona (ajax) para calcular el precio final del producto
+------------------------------------*/
+
+
+
+const precio = id('precio');
+precio.addEventListener('focus',()=>{
+    
+
+        let impuesto = id('impuesto').value;
+        let utilidad = id('utilidad').value;
+        console.log(costoBolivar.value);
+
+    let ajax = new XMLHttpRequest();
+    ajax.onload = function(){
+        
+        let impuesto = id('impuesto').value;
+        let utilidad = id('utilidad').value;
+        
+        
+        id('precio').value = this.responseText;
+    }
+    ajax.open('GET','/productos/precio/'+costoBolivar.value+'/'+impuesto+'/'+utilidad);
     ajax.send();
 
 })
