@@ -9,8 +9,5 @@ class Grupo extends Model
 {
     use HasFactory;
 
-    public function productos()
-    {
-        return $this->hasMany(Producto::class,'id');
-    }
+  
 }
