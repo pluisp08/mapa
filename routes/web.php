@@ -53,8 +53,12 @@ Route::get('productos/impuestos/{impuestos}',[ProductosController::class,'impues
 Route::get('productos/utilidad/{grupo}',[ProductosController::class,'utilidad'])->name('productos.utilidad');
 
 
-//Cargar precio total del producto del grupo de producto
-Route::get('productos/precio/{grupo}/{impuesto}/{utilidad}',[ProductosController::class,'precio'])->name('productos.precio');
+//Cargar precio total con iva del producto del grupo de producto
+Route::get('productos/precioiva/{grupo}/{impuesto}/{utilidad}',[ProductosController::class,'precioiva'])->name('productos.precioiva');
+
+//Cargar precio total exento del producto del grupo de producto
+Route::get('productos/precioexento/{grupo}/{utilidad}',[ProductosController::class,'precioexento'])->name('productos.precioexento');
+
 
 
 

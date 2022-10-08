@@ -19,6 +19,7 @@
                         </tr>
                     </thead>
                     <tbody>
+                        
                         @foreach ($productos as $producto)
                         
                         <tr>

@@ -18,7 +18,9 @@ class ProductosController extends Controller
     public function index()
     {
         $productos = Producto::all();
-        return view('productos.index',compact('productos'));
+        
+         //return response()->json($productos);
+        return view('productos.index', compact('productos'));
     }
 
     public function create()
@@ -34,7 +36,7 @@ class ProductosController extends Controller
         //Captura los impuestos existentes
         $impuestos = Impuesto::all();
 
-        return view('productos.create', compact('tasas', 'grupos','impuestos'));
+        return view('productos.create', compact('tasas', 'grupos', 'impuestos'));
     }
 
 
@@ -52,11 +54,11 @@ class ProductosController extends Controller
         $productos->grupo_id = $request->grupo_id;
         $productos->impuesto_id = $request->impuesto_id;
         $productos->creado = date('Y-m-d', $request->created_at);
-        $productos->modificado = date('Y-m-d',$request->updated_at);
+        $productos->modificado = date('Y-m-d', $request->updated_at);
 
         $productos->save();
 
-        return redirect('productos')->with('success','Producto guardado exitosamente...');
+        return redirect('productos')->with('success', 'Producto guardado exitosamente...');
 
         //return response()->json($productos);
     }
@@ -79,24 +81,37 @@ class ProductosController extends Controller
         return view('productos.impuestos', compact('porcImpuesto'));
     }
 
-    public function precio($cost,$imp,$u)
+    public function precioiva($cost, $imp, $u)
     {
-        $utilidad = ($u/100)+1;
+        $utilidad = ($u / 100) + 1;
+        $impuesto = ($imp / 100) + 1;
+        $costo = $cost * 1;
+        $prec = $costo * $impuesto * $utilidad;
+        $precio = $prec;
 
-        if($imp == 1){
-            $prec = $cost * $utilidad;
-            $precio = round($prec,2);
-        }else{
-            $impuesto = ($imp/100)+1;
-            $prec = $cost * $utilidad;
-            $precio = round($prec,2);
 
-        }
-       
+
+
+        //return response()->json($prec);
+
+
+        return view('productos.precioiva', compact('precio'));
+    }
+
+    public function precioexento($cost, $u)
+    {
+        $utilidad = ($u / 100) + 1;
         
-//return response()->json($impuesto);
+        $costo = $cost * 1;
+        $prec = $costo * $utilidad;
+        $precio = $prec;
 
 
-        return view('productos.precio', compact('precio'));
+
+
+        //return response()->json($prec);
+
+
+        return view('productos.precioexento', compact('precio'));
     }
 }
