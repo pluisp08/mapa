@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FacturacionsController;
 use App\Http\Controllers\GruposController;
 use App\Http\Controllers\ImpuestosController;
 use App\Http\Controllers\ProductosController;
@@ -72,6 +73,8 @@ Route::get('impuestos/create',[ImpuestosController::class,'create'])->name('impu
 Route::post('impuestos',[ImpuestosController::class,'store'])->name('impuesto.store');
 
 
+//Index de Facturacion
+Route::get('facturacions',[FacturacionsController::class,'index'])->name('facturcions.index');
 
 
 
