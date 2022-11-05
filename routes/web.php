@@ -74,8 +74,11 @@ Route::post('impuestos',[ImpuestosController::class,'store'])->name('impuesto.st
 
 
 //Index de Facturacion
-Route::get('facturacions',[FacturacionsController::class,'index'])->name('facturcions.index');
+Route::get('facturacions',[FacturacionsController::class,'index'])->name('facturacions.index');
 
+
+//Modualo Facturacions
+Route::get('facturacions/facturas',[FacturacionsController::class,'facturas'])->name('facturacions.facturas');
 
 
 

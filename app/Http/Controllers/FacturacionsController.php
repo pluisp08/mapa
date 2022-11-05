@@ -85,5 +85,12 @@ class FacturacionsController extends Controller
         //
     }
 
+
+    public function facturas()
+    {
+        return view('facturacions.facturas');
+    }
+
+
    
 }
